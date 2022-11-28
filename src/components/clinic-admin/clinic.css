@@ -1,0 +1,584 @@
+/* Login for Clinic Admin */
+.signin .group-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signin form > h1{
+    margin-bottom: 0px !important;
+}
+
+.signin .admin,.signin .doctor{
+    padding: 15px 5px;
+    outline: none;
+    border:none;
+    border-radius: 5px;
+    background-color: white;
+    color: rgb(143, 143, 143);
+    margin-top: 35px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.2s;
+}
+
+.signin .group-btn button:hover,.signin .group-btn .active{
+    background-color: rebeccapurple;
+    color: white;
+}
+
+.group-btn button i{
+    color: rgb(143, 143, 143) !important;
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+.group-btn button:hover i,.group-btn .active i{
+    color: white !important;
+}
+
+.signin .admin{
+    margin-right: 10px;
+}
+
+.signin .doctor{
+    margin-left: 10px;
+}
+
+.signin select,.upload-container form select{
+  appearance: none;
+  -moz-appearance: none;
+  padding: 15px 10px;
+  padding-left: 2.5rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.signin .fa-caret-down,
+.upload-container form .fa-caret-down{
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  color:rgb(110, 110, 110) !important;
+  pointer-events: none; 
+}
+
+.signin .fa-house-medical,
+.upload-container form .fa-virus,
+.upload-container form .fa-sun,
+.upload-container form .fa-envelope{
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0.7rem;
+}
+
+/* Sidebar menu for clinic*/
+/* transition effect on buttons */
+.btn{
+    position: relative;
+}
+.active-tab {
+    position: absolute;
+    width:100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    transform: translateY(0%);
+    border-radius: 10px;
+    height: 38px;
+    transition: top ease-in-out 0.3s;
+    z-index: 0;
+}
+
+.logout-btn{
+    position: absolute;
+    bottom: 30px;
+    width: 250px;
+    margin-left: 10px;
+}
+
+.btn .highlighted span{
+  color:black;
+}
+
+.btn .highlighted i{
+  color: rebeccapurple;
+}
+
+/* info content container */
+.container .nav-content{
+    flex:3;
+    position: relative;
+}
+
+.nav-content .content{
+    margin-right: 40px;
+    margin-top: 7.5rem;
+}
+
+/* Navbar clinic */
+.container .nav-content .navbar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 2px rgba(179, 179, 179, 0.7);
+    color: black;
+}
+
+.navbar .nav-left{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-right{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-right: 40px;
+}
+
+.nav-right .msg{
+    margin-right: 2.2rem;
+    cursor: pointer;
+}
+
+.nav-right .notification{
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-right .notification span{
+    position: absolute;
+    top: 3px;
+    left:10px;
+    border-radius: 50%;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 7px;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    text-align: center;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border: 2px solid #fff;
+}
+
+/* Doctor component  */
+.container .content .doctor{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left:20px
+}
+
+
+/* textfield and buttons */
+.doctor .input{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input .search{
+    position: relative;
+    width: 100%;
+    flex:2;
+} 
+
+.input .search .search-field{
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px 10px;
+    padding-left: 3rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid white;
+}
+
+.search .search-field::placeholder{
+    color: rgba(179, 179, 179, 0.7);
+}
+
+.input .search i{
+    color: #C649FD;
+    position: absolute;
+    top:15px;
+    left: 15px;
+}
+
+.doctor .btn-group{
+    flex:1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-group button{
+    padding: 15px 15px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #C649FD;
+    outline: none;
+    margin: 0 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    cursor: pointer;
+    width: 100%;
+    /* transform: translateX(0%);
+    transition: width ease-in-out 0.3s; */
+}
+
+.btn-group .add-btn,.btn-group .assign-btn{
+    margin-right: 0 !important;   
+}
+
+.btn-group .hide {
+    animation: hide 0.3s ease forwards;
+}
+  
+  .btn-group .show {
+    width: 100%;
+    animation: show 0.3s ease forwards;
+  }
+  
+  @keyframes show {
+    from {
+      transform: translateX(50%);
+      visibility: hidden;
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      visibility: visible;
+      width: 100%;
+      opacity: 1;
+      margin-right: 20px;
+    }
+  }
+  
+  @keyframes hide {
+    from {
+      transform: translateX(0%);
+      visibility: visible;
+      width: 100%;
+      opacity: 1;
+    }
+    to {
+      transform: translateX(50%);
+      visibility: hidden;
+      width: 0;
+      opacity: 0;
+      padding:0;
+      margin: 0;
+    }
+  }
+
+
+/* table doctors */
+.doctors-list{
+    margin-top: 1rem;
+}
+
+.doctors-list table{
+    border-collapse:collapse;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody:before {
+    content:"@";
+    display:block;
+    line-height:20px;
+    text-indent:-99999px;
+}
+
+.doctors-list table th{
+    padding: 10px;
+}
+
+.doctors-list table td{
+    padding: 10px;
+    color: black;
+}
+
+.doctors-list table .fa-pen{
+    color: #1aa260;
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+.doctors-list table .fa-trash-can{
+    color: rgb(226, 65, 65);
+    font-size: 1.3rem;
+    text-align: right;
+}
+
+.doctors-list table th{
+    background-color: rebeccapurple;
+    
+}
+
+/* custom checkbox */
+.checkbox-rect{
+   position: relative;
+}
+
+.checkbox-rect input[type="checkbox"] {
+    display: none;
+  }
+  
+  .checkbox-rect input[type="checkbox"] + label,
+  .checkbox-rect label span {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .checkbox-rect input[type="checkbox"]:hover label span {
+    background: rebeccapurple;
+  }
+  
+  .checkbox-rect input[type="checkbox"] + label,
+  .checkbox-rect input[type="checkbox"] label span{
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    left: -7px;
+    background: #E6E6E6;
+  }
+  
+  .checkbox-rect input[type="checkbox"]:checked + label span {
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-content: center;
+    left: 0;
+    top: 0;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    background: rebeccapurple;
+  }
+  
+
+  /* upload file Model */
+  .upload-container{
+    padding: 20px 40px;
+    border-radius: 5px;
+    height: auto;
+    width: 450px;
+    background-color: white;
+}
+.upload-container .upload-card > p{
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: rgb(139, 139, 139);
+    text-align: center;
+}
+
+.upload-card .upload-box{
+    color: black;
+    line-height: 1.7rem;
+    font-weight: 700;
+    text-align: center;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='black' stroke-width='1' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 10px;
+    padding: 3rem;
+    position: relative;
+}
+
+.upload-box p span{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #C649FD;
+}
+
+.upload-box input{
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    opacity: 0;
+}
+
+.upload-container .upload-files{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+.upload-files .upload-file{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.upload-files .upload-file .img{
+    width: 40px;
+}
+
+.upload-file .img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.upload-file .file-detail{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 5px;
+}
+
+.file-detail .file{
+    display: flex;
+    justify-content: space-between;
+}
+
+.file-detail .file span{
+    color: rgb(139, 139, 139);
+}
+
+.file-detail .progress{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.file-detail .progress-width{
+    position: relative;
+    width: 100%;
+    height: 3px;
+    border-radius: 5px;
+    z-index: 1;
+    background-color: rgb(201, 201, 201);
+}
+
+.file-detail .progress-width .progress-bar{
+    position: absolute;
+    transition: all ease-in-out 0.5s;
+    width: 0%;
+    z-index: 2;
+    height: 3px;
+    background-color: #C649FD;
+    border-radius: 5px;
+}
+
+
+.upload-container .upload-btn{
+    margin-top: 10px;
+    background-color: #C649FD;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #C649FD;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Add model  */
+.upload-container{
+    position: relative;
+}
+
+.model-bg{
+    background-color: rgb(240, 240, 240);
+}
+
+.upload-container form{
+    color: black !important;
+}
+
+.upload-container form i{
+    color: #C649FD !important;
+}
+
+/* setting page */
+.setting{
+    color: black;
+}
+
+.setting .title{
+    display: flex;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.title i{
+    margin-left: 2rem;
+    color:#C649FD;
+    font-size: 1.2rem;
+}
+
+.title p{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    color:rgb(110, 110, 110);
+}
+
+.setting .line{
+    margin: 1rem 0;
+}
+
+.setting .payment{
+    display: flex;
+}
+
+.payment > p{
+    font-size: 1.5rem;
+    color: rgb(110, 110, 110);
+    font-weight: bold;
+}
+
+.payment .payment-detail{
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
+    color: black;
+    font-weight: bold !important;
+}
+
+.payment-detail p span{
+    color:#1aa260;
+}
+
+.payment-detail .card{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.card img{
+    margin-right: 0.7rem;
+}
