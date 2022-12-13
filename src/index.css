@@ -930,9 +930,6 @@ select:focus{
 
 /* Laptop screen */
 @media (max-width: 992px) {
-  .navbar .nav-left{
-    margin-left: 1rem;
-  }
   .nav{
     margin-right: 0px;
   }

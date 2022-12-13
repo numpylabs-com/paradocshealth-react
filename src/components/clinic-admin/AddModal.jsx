@@ -1,6 +1,7 @@
 import React,{useContext} from 'react'
 import { useLocation } from 'react-router-dom'
 import { ModelContext } from '../../context/UIContext'
+import {motion} from "framer-motion"
 
 const AddModal = () => {
   const {dispatch, addModel} = useContext(ModelContext)
@@ -11,8 +12,16 @@ const AddModal = () => {
   //   setModelType(location.pathname)
   // },[location])
   return (
-    <div className={`model${addModel ? "" : " hide-model"}`} onClick={(e)=>e.stopPropagation()}>
-      <div className="upload-container model-bg">
+    <motion.div
+    initial={{opacity:0}} 
+    animate={{opacity:1}}  
+    className={`model${addModel ? "" : " hide-model"}`} 
+    onClick={(e)=>e.stopPropagation()}>
+      <motion.div 
+        initial={{y:-100}} 
+        animate={{y:0}} 
+        transition={{type: "spring", stiffness: 100}}
+        className="upload-container model-bg">
         <button className="close-btn" onClick={()=>dispatch({type:"ADD_MODEL"})}><i className="fa-solid fa-circle-xmark"></i></button>
         {location.pathname=="/patient"?(
           <form>
@@ -68,8 +77,8 @@ const AddModal = () => {
             <button className='add-btn'><span>Add</span></button>   
         </form>
         )}
-      </div>
-    </div> 
+      </motion.div>
+    </motion.div> 
   )
 }
 

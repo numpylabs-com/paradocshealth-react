@@ -50,21 +50,22 @@
     margin-left: 10px;
 }
 
-.signin select,.upload-container form select{
+.signin .group-form select,.upload-container form select,.map-input select{
   appearance: none;
   -moz-appearance: none;
   padding: 15px 10px;
   padding-left: 2.5rem;
   background-color: white;
+  color: black;
   outline: none;
   border: none;
   border-radius: 5px;
 }
 
 .signin .fa-caret-down,
-.upload-container form .fa-caret-down{
+.upload-container form .fa-caret-down,.map-input .fa-caret-down{
   position: absolute;
-  bottom: 0.7rem;
+  bottom: 0.9rem;
   right: 0.7rem;
   color:rgb(110, 110, 110) !important;
   pointer-events: none; 
@@ -75,7 +76,7 @@
 .upload-container form .fa-sun,
 .upload-container form .fa-envelope{
   position: absolute;
-  bottom: 0.8rem;
+  bottom: 0.9rem;
   left: 0.7rem;
 }
 
@@ -107,6 +108,10 @@
 
 .btn .highlighted span{
   color:black;
+}
+
+.side-size .btn span{
+    pointer-events: none;
 }
 
 .btn .highlighted i{
@@ -581,4 +586,14 @@ tbody:before {
 
 .card img{
     margin-right: 0.7rem;
+}
+
+/* media Queries */
+@media (max-width: 992px) {
+    .navbar .nav-left{
+        margin-left: 3rem;
+      } 
+    .menu{
+        top: 25px;
+      }
 }

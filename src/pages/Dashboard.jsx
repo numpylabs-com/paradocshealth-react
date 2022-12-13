@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 const Dashboard = () => {
 
   return (
-    <div className='content'>
+    <div className='content' style={{backgroundColor:"white"}}>
         <Navbar/>
         <DashboardDetail/>
     </div>

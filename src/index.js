@@ -12,7 +12,7 @@ root.render(
   <DataContextProvider>
   <ModelContextProvider>
   <React.StrictMode>
-    <Router>
+    <Router >
       <App />
     </Router>
   </React.StrictMode>

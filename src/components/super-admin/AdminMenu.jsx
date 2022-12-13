@@ -1,26 +1,24 @@
 import React,{useState, useEffect, useRef} from "react";
-import { Link,useLocation } from "react-router-dom";
+import { Link,NavLink,useLocation } from "react-router-dom";
 import logowhilte from "../../assets/pdh-logo-white.webp"
 
-const ClinicSidebar = () => {
-  const ref = useRef(null);
+const AdminMenu = () => {
+  const ref = useRef(null); 
   const location = useLocation()
   const [display, setDisplay] = useState(false);
   const [pos,setPos] = useState(null)
   const [active, setActive] = useState(location.pathname)
   const posVal = localStorage.getItem('activeTab') || null
+  let posObj = {tab1:0,tab2:72,tab3:144,tab4:206,tab5:278}
 
-  if(pos==null && posVal != null) setPos(localStorage.getItem('activeTab'))
+  if(pos==null && posVal != null) setPos(localStorage.getItem('active'))
   else if(pos==null) setPos("0px")
 
   const handleEffect= (e) => {
     let Top = e.target.offsetTop
-    // let bound = e.target.getBoundingClientRect().top
-    // let parent = e.target.offsetParent.offsetTop
-    // let value = bound - parent
     ref.current = Top+"px";
     setPos(ref.current)
-    localStorage.setItem('activeTab', ref.current)
+    localStorage.setItem('active', ref.current)
   }
   
   const toggleMenu = () => {
@@ -51,24 +49,37 @@ const ClinicSidebar = () => {
           <div className="line"></div>
           <div className="btn">
             <Link
-              to="/doctor"
-              className={`tab-btn${active === "/doctor" ? " highlighted" : ""}`}
-              
+              to="/admin"
+              className={`tab-btn${active === "/admin" ? " highlighted" : ""}`}
               onClick={(e) =>{handleEffect(e)}}
             >
-              <i className="fa-solid fa-user-doctor"></i> <span>Doctors</span>
+              <i className="fa-solid fa-border-all"></i> <span>Dashboard</span>
             </Link>
             <Link
-              to="/patient"
-              className={`tab-btn${active === "/patient" ? " highlighted" : ""}`}
+              to="/admin/clinics"
+              className={`tab-btn${active === "/admin/clinics" ? " highlighted" : ""}`}
               onClick={(e) =>{handleEffect(e)}}
             >
-              <i className="fa-solid fa-user-plus"></i>
-              <span>Patients</span>
+              <i className="fa-solid fa-house-medical"></i>
+              <span>Clinics</span>
             </Link>
             <Link
-              to="/settings"
-              className={`tab-btn${active === "/settings" ? " highlighted" : ""}`}
+              to="/admin/memberships"
+              className={`tab-btn${active === "/admin/memberships" ? " highlighted" : ""}`}
+              onClick={(e) =>{handleEffect(e)}}
+            >
+              <i className="fa-solid fa-address-card"></i> <span>MemberShips</span>
+            </Link>
+            <Link
+              to="/admin/audit"
+              className={`tab-btn${active === "/admin/audit" ? " highlighted" : ""}`}
+              onClick={(e) =>{handleEffect(e)}}
+            >
+              <i className="fa-solid fa-file-signature"></i> <span>Audit</span>
+            </Link>
+            <Link
+              to="/admin/setting"
+              className={`tab-btn${active === "/admin/setting" ? " highlighted" : ""}`}
               onClick={(e) =>{handleEffect(e)}}
             >
               <i className="fa-solid fa-gear"></i> <span>Setting</span>
@@ -86,4 +97,4 @@ const ClinicSidebar = () => {
   );
 };
 
-export default ClinicSidebar;
+export default AdminMenu;

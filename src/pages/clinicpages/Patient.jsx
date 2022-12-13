@@ -5,7 +5,7 @@ import TableItems from "../../components/clinic-admin/TableItems";
 import {PatientData} from "../../config/data"
 
 const Patient = () => {
-  const header = ["ID#", "Name", "Disease", "Doctor", "Contact"];
+  const header = ["ID#", "Name", "Disease", "Doctor", "Contact","",""];
   return (
     <div className="nav-content">
       <Navbar />

@@ -1,20 +1,30 @@
 import React,{useContext} from 'react'
 import { ModelContext } from '../../context/UIContext'
 import filepng from "../../assets/csv-file.png"
+import {motion} from "framer-motion"
 
 const UploadModal = () => {
     const {dispatch, uploadModel} = useContext(ModelContext)
+
+    const filehandling = (e)=>{
+        console.log(e.target.files[0])
+    }
     return (
-    <div
+    <motion.div initial={{opacity:0}} animate={{opacity:1}}
         className={`model${uploadModel ? "" : " hide-model"}`}
         onClick={()=>dispatch({type:"UPLOAD_MODEL"})}>
-        <div className="upload-container" onClick={(e)=>e.stopPropagation()}>
+        <motion.div 
+        initial={{y:-100}} 
+        animate={{y:0}} 
+        transition={{type: "spring", stiffness: 100}}
+        className="upload-container" 
+        onClick={(e)=>e.stopPropagation()}>
         <div className="upload-card">
             <p>Upload Files</p>
             <div className="upload-box">
                 <p>Drag File Here</p>
                 <p>or <span>Browser</span></p>
-                <input type="file" name="file"/>
+                <input type="file" name="file" onChange={filehandling}/>
             </div>
         </div>
         <div className="upload-files">
@@ -54,8 +64,8 @@ const UploadModal = () => {
 
             <button id="btn" className="upload-btn">Done</button>
         </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
   )
 }
 
